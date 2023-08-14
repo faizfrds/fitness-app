@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Exercise } from "@/types/types";
 import Todo from "./Todo";
+import Image from "next/image";
 
 const Search = () => {
   const router = useRouter();
@@ -64,7 +65,7 @@ const Search = () => {
   }
 
   return (
-    <div className="bg-blue-700 text-white rounded-lg m-auto w-fit h-fit p-5">
+    <div className="bg-blue-700 text-white rounded-lg m-auto w-[80vh] h-fit p-5">
       
 
       {search ? 
@@ -74,13 +75,13 @@ const Search = () => {
             Back
         </div>
       </div> : 
-      <div>
+      <div className="h-full">
         <form onSubmit={handleSubmit}>
         <div className="pb-5 flex flex-col">
           <label>Enter Height</label>
           <input
             onChange={handleChange}
-            className="text-black px-2 w-[160px]"
+            className="text-black px-2 w-[60%] rounded-lg"
             type="number"
             name="height"
             placeholder="height in cm"
@@ -92,7 +93,7 @@ const Search = () => {
           <label>Enter Weight</label>
           <input
             onChange={handleChange}
-            className="text-black px-2 w-[160px]"
+            className="text-black px-2 w-[60%] rounded-lg"
             type="number"
             name="weight"
             placeholder="weight in kg"
@@ -106,6 +107,7 @@ const Search = () => {
         >
           Search
         </button>
+        <img src="https://static.vecteezy.com/system/resources/previews/022/653/988/original/treadmill-in-modern-gym-toned-image-3d-rendering-generative-ai-free-photo.jpg" width="250px" height="210px" className="absolute top-40 right-[31%]"/>
       </form>
       </div>}
     </div>
